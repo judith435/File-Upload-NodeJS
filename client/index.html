@@ -16,6 +16,9 @@
         <input type="text" name="title">
         <input type="file" name="file" ng-model=fily>
         <input type="submit" value="Upload" ng-click="upload()">
+        <br>
+        <input type="file" name='meir' ng-file-select="onFileSelect($files)">
+        <input type="button" value="meir attempt" ng-click="addItem()">
     </form>
 </body>
 </html>

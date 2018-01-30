@@ -18,6 +18,24 @@ var fs = require('fs');
 // const path = require('path');
 // app.use('/public', express.static(path.join(__dirname, 'public')))
 
+//***************************************************************************************************** */
+
+var multer  = require('multer');
+var storage = multer.diskStorage({
+    destination: function (req, file, cb) {
+        cb(null, './uploads/')
+    },
+    filename: function (req, file, cb) {
+        cb(null, file.originalname+ '-' + Date.now()+'.jpg')
+    }
+});
+var upload = multer({ storage: storage });
+
+app.post('/multer', upload.single('file'));
+
+
+
+//***************************************************************************************************** */
 
 // Listen to '/' in GET Verb methods - serve the main Angular index.html file
 app.get('/', function (req, res) {

@@ -17,8 +17,7 @@
         <input type="file" name="file" ng-model=fily>
         <input type="submit" value="Upload" ng-click="upload()">
         <br>
-        <input type="file" name='meir' ng-file-select="onFileSelect($files)">
-        <input type="button" value="meir attempt" ng-click="addItem()">
-    </form>
+        <input type="file" file-model="myFile" onchange="angular.element(this).scope().uploadedCourseImage(this)"/><br><br>
+        <button ng-click="uploadFile()">Upload</button>    </form>
 </body>
 </html>

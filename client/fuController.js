@@ -1,32 +1,34 @@
-fuApp.controller('fuController', function($scope, $upload) {
+fuApp.controller('fuController', function($scope, $http) {
     $scope.upload = function()  {
         var tat = $scope.fily;
         alert('you clicked upload');
     }  
-    
 
-    $scope.formObj = {
-        name: "Test"
-    };
-      
-      var fileToUpload;
-      
-      $scope.onFileSelect = function (file) {
-       fileToUpload = file[0];
-      };
-      
-      // POSt request to /api/items
-      $scope.addItem = function() {
-        console.log($scope.formObj);
-        $scope.upload = $upload.upload({
-         url: '/api/items',
-         method: 'POST',
-         data: { myObj: $scope.formObj },
-         file: fileToUpload
-        }).success(function(data, status, headers, config) {
-         console.log("success");
+    $scope.uploadFile = function(){
+
+        var file = $scope.myFile;
+        var uploadUrl = "/multer";
+        var fd = new FormData();
+        fd.append('file', file);
+
+        $http.post(uploadUrl,fd, {
+            transformRequest: angular.identity,
+            headers: {'Content-Type': undefined}
+        })
+        .success(function(){
+          console.log("success!!");
+        })
+        .error(function(){
+          console.log("error!!");
         });
-      };
+    };
+
+    $scope.uploadedCourseImage = function(fu) {
+        $scope.$apply(function($scope) {
+          $scope.myFile = fu.files;    
+        });
+    }
+
 });
 
 

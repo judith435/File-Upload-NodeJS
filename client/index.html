@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" ng-app='fuApp'>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="angular.min.js"></script>
+    <!-- <script src="../node_modules/angular/angular.min.js"></script> -->
+    <script src="app.js"></script>  
+    <script src="fuController.js"></script>  
+</head>
+<body>
+        <!-- <form action="/upload" enctype="multipart/form-data" method="post"> -->
+    <form  enctype="multipart/form-data" ng-controller="fuController">
+        <input type="text" name="title">
+        <input type="file" name="file" ng-model=fily>
+        <input type="submit" value="Upload" ng-click="upload()">
+    </form>
+</body>
+</html>

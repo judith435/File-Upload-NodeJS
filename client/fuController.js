@@ -7,7 +7,7 @@ fuApp.controller('fuController', function($scope, $http) {
     $scope.uploadFile = function(){
 
         var file = $scope.myFile;
-        var uploadUrl = "/multer";
+        var uploadUrl = "/fileuploady";
         var fd = new FormData();
         fd.append('file', file);
 

@@ -1,23 +1,18 @@
 <!DOCTYPE html>
-<html lang="en" ng-app='fuApp'>
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>Document</title>
-        <script src="angular.min.js"></script>
-        <!-- <script src="../node_modules/angular/angular.min.js"></script> -->
-        <script src="app.js"></script>  
-        <script src="fuController.js"></script>  
-    </head>
-    <body>
-            <!-- <form action="/upload" enctype="multipart/form-data" method="post"> -->
-        <form  enctype="multipart/form-data" ng-controller="fuController">
-            <input type="text" name="title">
-            <input type="file" name="file" ng-model=fily>
-            <input type="submit" value="Upload" ng-click="upload()">
-            <br>
-            <input type="file" file-model="myFile" onchange="angular.element(this).scope().uploadedCourseImage(this)"/><br><br>
-            <button ng-click="uploadFile()">Upload</button>    </form>
-    </body>
+<html lang="en" ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src='../node_modules/angular/angular.min.js'></script>
+    <script src='app.js'></script>
+</head>
+<body>
+   
+    <div ng-controller = "myCtrl">
+        <input type = "file" file-model = "myFile"/>
+        <button ng-click = "uploadFile()">upload me</button>
+     </div>
+</body>
 </html>
